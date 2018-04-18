@@ -1,0 +1,12 @@
+form{
+  &.login-form{
+    padding:1rem;
+    input {
+      &.underlined{
+        &.form-control {
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ISlide} from './components/carousel/carousel.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  slides: ISlide[] = [
+    {
+      href: 'https://mdbootstrap.com/img/Photos/Slides/img%20(70).jpg',
+      alt: 'First'
+    },
+    {
+      href: 'https://mdbootstrap.com/img/Photos/Slides/img%20(129).jpg',
+      alt: 'Second'
+    },
+    {
+      href: 'https://mdbootstrap.com/img/Photos/Slides/img%20(130).jpg',
+      alt: 'Third'
+    },
+  ];
 }

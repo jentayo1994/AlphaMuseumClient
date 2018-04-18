@@ -1,0 +1,14 @@
+.top-nav-collapse {
+  background-color: #3C3F41 !important;
+}
+
+.navbar {
+  background-color: transparent;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    background-color: #3C3F41;
+    position: relative;
+  }
+}

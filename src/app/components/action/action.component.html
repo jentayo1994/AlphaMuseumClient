@@ -1,0 +1,26 @@
+<!--Section: Actions-->
+<section class="section" *ngFor="let action of actions">
+  <!--Section heading-->
+  <!--Section description-->
+  <!--Grid row-->
+  <div class="row my-3">
+
+    <!--Grid column-->
+    <div class="col-md-12 mb-3">
+      <div class="card card-image" [style.background-image]="'url(' + action.imgSrc + ')'" [ngStyle]="{  'background-size': 'cover','background-repeat': 'no-repeat'} ">
+        <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+          <div class = "w-100">
+            <a routerLink="/actions"><h6 class="purple-text"><i class="fa fa-gift"></i><strong> Акції</strong></h6></a>
+            <h3 class="card-title py-3 font-bold"><strong>{{action.name}}</strong></h3>
+            <p class="pb-3">{{action.content}}</p>
+            <a class="btn btn-secondary btn-rounded waves-light" [routerLink]="[ '/actions', action.id ]" mdbRippleRadius><i class="fa fa-clone left"></i> Перейти</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Grid column-->
+  </div>
+  <!--Grid row-->
+
+</section>
+<!--/Section: Actions-->

@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: white;
+}
+
+
+/* Dropdown fix */
+button, html [type="button"], [type="reset"], [type="submit"] {
+  -webkit-appearance: initial;
+}
+
+.dropdown {
+  .dropdown-menu {
+    padding: .5rem;
+    &.dropdown-dark {
+      .dropdown-item{
+        &:hover {
+          background-color: #040404;
+        }
+      }
+    }
+    .dropdown-item{
+      &:hover{
+        border-radius: 2px;
+        -webkit-transition: all .3s linear;
+        transition: all .3s linear;
+        background-color: #4285F4;
+      }
+      &:active,
+      &:hover{
+        -webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+        box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+<!--Section: Events-->
+<section id="events">
+  <div class="row text-center text-md-left justify-content-center">
+
+    <!--First columnn-->
+    <div class=" col-lg-4 col-md-6 mb-3" *ngFor="let event of events">
+
+      <!--Card-->
+
+        <!--Card image-->
+        <div class="view overlay hm-white-slight z-depth-2 waves-light" mdbRippleRadius>
+          <img src="{{event.imgSrc}}" class="img-fluid"
+               alt="">
+          <a>
+            <div class="mask"></div>
+          </a>
+        </div>
+        <!--/.Card image-->
+        <!--Card content-->
+        <div class="text-center card-body">
+          <!--Title-->
+          <a class="teal-text" routerLink="/events"><h6 class="pb-1"><i
+                  class="fa fa-calendar-check-o"></i><strong>
+            Події </strong></h6></a>
+          <h4 class="card-title">{{event.name}}</h4>
+          <!--Text-->
+          <p class="card-text text-justify">{{event.description}}</p>
+          <p class="comment-date"><i class="fa fa-clock-o"></i> {{event.date}}</p>
+
+        <a class="btn btn-primary btn-sm" [routerLink]="['/events', event.id]">Детальніше</a>
+      <!--/.Card-->
+
+    </div>
+    <!--First columnn-->
+
+  </div>
+  </div>
+
+</section>
+<!--/Section: Events-->
