@@ -1,0 +1,14 @@
+<app-carousel [slides]="slides"></app-carousel>
+<!--Fonds section-->
+<section class="section text-center py-5">
+  <!--Grid row-->
+  <div class="row d-flex justify-content-center">
+    <!--Grid column-->
+    <div class="col-lg-6 col-xl-5 mb-3" *ngFor="let imageCard of imageCards">
+      <app-img-card [imageCard]="imageCard"></app-img-card>
+    </div>
+    <!--Grid column-->
+  </div>
+  <!--Grid row-->
+</section>
+<!--/History section-->

@@ -1,0 +1,66 @@
+<app-carousel [slides]="slides"></app-carousel>
+
+<h2 class="section-heading h1 text-center pt-4">Загальні відомості про музей</h2>
+
+<div class="container pt-5">
+
+        <div class="row">
+
+            <!--Grid column-->
+            <div class="col-6 mb-4">
+                <!--Featured image-->
+                <div class="view overlay hm-white-slight z-depth-2 waves-light" mdbRippleRadius>
+                    <img src="http://lh4.googleusercontent.com/-GUAUj7Iq9G8/Ut1m0hBAzeI/AAAAAAAAPjA/uekZN3vUgN0/s600/chernigiv%5B1%5D.jpg" class="img-fluid" alt="">
+                    <a>
+                        <div class="mask"></div>
+                    </a>
+                </div>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-6 mb-4">
+                <h4 class="mb-3"><strong>Історичний музей ЧНТУ</strong></h4>
+                <p class="text-justify">Бла бла бла бла бла бла бла... </p>
+                <p class="text-justify">Коли був створений.... </p>
+
+            </div>
+            <!--Grid column-->
+        </div>
+
+    <h2 class="section-heading h1 text-center pt-4">Робота музею</h2>
+
+    <p class="text-justify">Бла бла бла бла бла бла бла... </p>
+    <p class="text-justify">Бла бла бла бла бла бла бла... </p>
+    <p class="text-justify">Бла бла бла бла бла бла бла... </p>
+    <p class="text-justify">Бла бла бла бла бла бла бла... </p>
+    <p class="text-justify">Бла бла бла бла бла бла бла... </p>
+
+    <h2 class="section-heading h1 text-center pt-4">Де нас знайти?</h2>
+    <p class="text-justify">бла бла бла </p>
+    <agm-map [zoom]="15"  [latitude]="map.lat" [longitude]="map.lng" style="height: 300px">
+        <agm-marker [latitude]="map.lat" [longitude]="map.lng">
+            <agm-info-window>
+                    <div class="card card-cascade narrow">
+                        <!--Card image-->
+                        <div class="view overlay hm-white-slight waves-light" mdbRippleRadius>
+                            <img src="http://osvita.ua/doc/images/guide/5/502/502_tmp-001-502_m.jpg" class="w-50" alt="">
+                            <a>
+                                <div class="mask"></div>
+                            </a>
+                        </div>
+                        <!--/.Card image-->
+                        <!--Card content-->
+                        <div class="card-body">
+                            <h5 class="pink-text"><i class="fa fa-bank"></i> Музей</h5>
+                            <!--Title-->
+                            <h4 class="card-title">Історичний музей ЧНТУ</h4>
+                            <!--Text-->
+                            <p class="card-text">Адреса: вул Шевчерка ...</p>
+                        </div>
+                    </div>
+            </agm-info-window>
+            <agm-data-layer></agm-data-layer>
+        </agm-marker>
+    </agm-map>
+</div>

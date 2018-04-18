@@ -1,0 +1,59 @@
+<div #scroll></div>
+<app-carousel [slides]="slides"></app-carousel>
+
+<div class="container pt-5 " >
+
+    <!--Section: Articles-->
+    <section class="section extra-margins pb-3" >
+        <div class="row text-center text-md-left">
+            <!--First columnn-->
+            <div class="col-lg-4 col-md-6 mb-3 animated fadeInUp" *ngFor="let article of articles">
+                <!--Card-->
+                <div class="card">
+
+                    <!--Card image-->
+                    <div class="view overlay hm-white-slight waves-light">
+                        <img src="{{article.imgSrc}}" class="img-fluid"
+                             alt="">
+                        <a href="">
+                            <div class="mask"></div>
+                        </a>
+                    </div>
+                    <!--/.Card image-->
+
+                    <!--Card content-->
+                    <div class="card-body">
+
+                        <!--Title-->
+                        <a routerLink="/news" class="teal-text"><h6 class="pb-1"><i class="fa fa-newspaper-o"></i><strong>
+                            Новини </strong></h6></a>
+                        <a [routerLink]="['/news', article._id]"><h4 class="card-title">{{article.name}}</h4></a>
+                        <!--Text-->
+                        <p class="card-text text-justify">{{article.description}}</p>
+                        <div >
+                            <!--Image column-->
+                            <div class="media justify-content-end">
+                                <img src="{{article.imgAuthorSrc}}"
+                                     class="img-fluid rounded-circle z-depth-2">
+                                <div class="media-left pl-2">
+                                    <div class="user-name"><a><strong>{{article.author}}</strong></a></div>
+                                    <p class="comment-date"><i class="fa fa-clock-o"></i> {{article.date}}</p>
+                                </div>
+                            </div>
+                            <!--/.Card content-->
+                        </div>
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <!--First columnn-->
+            </div>
+        </div>
+    </section>
+    <!--/Section: Articles-->
+    <div >
+        <app-paginator id="test" [size]="count" [offset]="offset" [limit]="limit" (pageChange)="onPageChanged($event)" ></app-paginator>
+    </div>
+
+    <h2 class="section-heading h1 text-center pb-1">Найближчі події</h2>
+    <app-event></app-event>
+</div>

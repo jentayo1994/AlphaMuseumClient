@@ -1,0 +1,39 @@
+<app-carousel [slides]="slides"></app-carousel>
+<!--Events section-->
+<section class="section text-center py-5">
+  <!--Section heading-->
+
+  <!--Section description-->
+
+  <!--Grid row-->
+  <div class="row d-flex justify-content-center">
+
+    <!--Grid column-->
+    <div class="col-lg-6 col-xl-5 mb-3 animated fadeInUp" *ngFor="let event of events">
+
+      <!--Featured image-->
+      <div class="view overlay hm-white-slight z-depth-2 waves-light" mdbRippleRadius>
+
+        <img src="{{event.imgSrc}}"  class="img-fluid" alt="">
+        <a>
+          <div class="mask"></div>
+        </a>
+      </div>
+
+      <!--Excerpt-->
+      <div class="card-body mt-1">
+        <a href="" class="green-text"  routerLink="/events">
+          <h5><i class="fa fa-calendar-check-o"></i> Події</h5>
+        </a>
+        <p class="comment-date"><strong><i class="fa fa-clock-o"></i> {{event.date}}</strong></p>
+        <h3>{{event.name}}</h3>
+        <p>{{event.description}}</p>
+        <a class="btn btn-primary btn-lg waves-light" [routerLink]="['/events', event._id]" mdbRippleRadius>Детальніше</a>
+      </div>
+    </div>
+    <!--Grid column-->
+  </div>
+  <!--Grid row-->
+
+</section>
+<!--/Events section-->

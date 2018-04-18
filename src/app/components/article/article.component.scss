@@ -1,0 +1,21 @@
+@media screen and (min-width: 992px) {
+  .article:nth-child(2n) {
+    .image{
+      order:2;
+    }
+    .description{
+      order:1;
+    }
+  }
+  }
+
+@media screen and (max-width: 768px){
+  .article-footer {
+    .detailed-button {
+      order:2;
+    }
+    .media {
+      order:1;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+ <!--Section: News-->
+<section class="section extra-margins pb-3 text-center text-lg-left">
+
+    <!--Grid row-->
+    <div class="row article" *ngFor="let article of articles">
+
+        <!--Grid column-->
+        <div class="col-lg-4 mb-4 image">
+            <!--Featured image-->
+            <div class="view overlay hm-white-slight z-depth-2 waves-light" mdbRippleRadius>
+                <img src="{{article.imgSrc}}" class="img-fluid" alt="">
+                <a>
+                    <div class="mask"></div>
+                </a>
+            </div>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-7 ml-xl-4 mb-4 description">
+            <!--Excerpt-->
+            <a href="" class="teal-text" routerLink="/news"><h6 class="pb-1"><i class="fa fa-newspaper-o"></i><strong>
+                Новини </strong></h6></a>
+            <h4 class="mb-3"><strong>{{article.name}}</strong></h4>
+            <p class="text-justify">{{article.description}}</p>
+
+            <div class="row justify-content-between article-footer">
+                <div class="col-md-6 detailed-button">
+                    <a class="btn btn-primary btn-md" [routerLink]="['/news', article.id]">Детальніше</a>
+                </div>
+                <div class="col-md-6 media justify-content-lg-end justify-content-center ">
+                        <img src="{{article.imgAuthorSrc}}"
+                             class="img-fluid rounded-circle z-depth-2 waves-light">
+                        <div class="media-left pl-2">
+                            <div class="user-name"><a><strong>{{article.author}}</strong></a></div>
+                            <p class="comment-date"><i class="fa fa-clock-o"></i> {{article.date}}</p>
+
+                        </div>
+                </div>
+            </div>
+        </div>
+        <!--Grid column-->
+    </div>
+
+    <!--Grid row-->
+</section>

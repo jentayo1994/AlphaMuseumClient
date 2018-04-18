@@ -1,0 +1,24 @@
+<app-carousel [slides]="slides"></app-carousel>
+<!--<app-carousel [slides]="slides"></app-carousel>-->
+<div class="container">
+  <!--Section heading-->
+  <h2 class="section-heading h1 text-center pt-4">Новини</h2>
+  <!--Section description-->
+
+  <app-article></app-article>
+  <div class="text-center">
+    <button type="button" class="btn btn-primary  waves-light"  routerLink="/news" mdbRippleRadius>Всі новини</button>
+  </div>
+  <hr class="mb-5">
+</div>
+  <div class="container">
+    <app-action ></app-action>
+  </div>
+  <div class="container">
+  <hr class="mb-5">
+  <h2 class="section-heading h1 text-center pb-1">Події</h2>
+  <app-event></app-event>
+  <div class="text-center">
+    <button type="button" class="btn btn-primary  waves-light"  routerLink="/events" mdbRippleRadius>Всі події</button>
+  </div>
+</div>

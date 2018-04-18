@@ -1,0 +1,13 @@
+<mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
+  <mdb-slide *ngFor="let slide of slides">
+    <div class="view hm-black-light">
+      <img class="d-block w-100" src="{{slide.href}}"
+           alt="{{slide.alt}}">
+      <div class="mask waves-light" mdbRippleRadius></div>
+    </div>
+    <div class="carousel-caption">
+      <h1 class="h1-responsive">{{slide?.caption}}</h1>
+      <p>{{slide?.text}}</p>
+    </div>
+  </mdb-slide>
+</mdb-carousel>
