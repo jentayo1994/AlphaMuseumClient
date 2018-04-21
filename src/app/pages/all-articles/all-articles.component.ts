@@ -2,7 +2,7 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {ISlide} from '../../components/carousel/carousel.component';
 import {ArticlesService} from '../../shared/services/articles.service';
 import {IPaginatorResult} from '../../components/paginator/paginator.component';
-import {Article} from '../../models/article';
+import {Article} from '../../shared/models/article';
 
 @Component({
   selector: 'app-all-articles',

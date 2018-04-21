@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import {Observable} from 'rxjs/Rx';
-import {HttpClient, HttpParams} from '@angular/common/http';
-import {HEvent} from '../../models/h-event';
+import { Observable } from 'rxjs/Observable';
+import { HttpClient, HttpParams } from '@angular/common/http';
+
+import { HEvent } from '../models/h-event';
 
 @Injectable()
 export class HEventsService {

@@ -1,6 +1,6 @@
 import {Component, Input, OnInit, Output} from '@angular/core';
 import {ISlide} from '../../../../components/carousel/carousel.component';
-import {HEvent} from '../../../../models/h-event';
+import {HEvent} from '../../../../shared/models/h-event';
 import {HEventsService} from '../../../../shared/services/hevents.service';
 
 

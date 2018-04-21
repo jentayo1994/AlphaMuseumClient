@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Action} from '../../models/action';
+import {Action} from '../../shared/models/action';
 import {ISlide} from '../../components/carousel/carousel.component';
 import {ActionsService} from '../../shared/services/actions.service';
 import {ActivatedRoute} from '@angular/router';

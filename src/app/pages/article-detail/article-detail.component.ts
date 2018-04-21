@@ -3,7 +3,7 @@ import {ISlide} from '../../components/carousel/carousel.component';
 import {ActivatedRoute} from '@angular/router';
 import {Params} from '@angular/router';
 import {ArticlesService} from '../../shared/services/articles.service';
-import {Article} from '../../models/article';
+import {Article} from '../../shared/models/article';
 
 @Component({
     selector: 'app-article-details',

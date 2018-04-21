@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { AgmCoreModule } from '@agm/core';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
+import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -18,7 +17,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ActionComponent } from './components/action/action.component';
 import { EventComponent } from './components/event/event.component';
 import { EventsService } from './shared/services/events.service';
-import {ActionsService} from './shared/services/actions.service';
+import { ActionsService } from './shared/services/actions.service';
 import { AllArticlesComponent } from './pages/all-articles/all-articles.component';
 import { AllEventsComponent } from './pages/all-events/all-events.component';
 import { AllActionsComponent } from './pages/all-actions/all-actions.component';
@@ -40,9 +39,11 @@ import { MechanismsAndDevicesComponent } from './pages/fonds/pages/mechanisms-an
 import { LiteratureComponent } from './pages/fonds/pages/literature/literature.component';
 import { AudiovisualMaterialsComponent } from './pages/fonds/pages/audiovisual-materials/audiovisual-materials.component';
 import { ArtworksComponent } from './pages/fonds/pages/artworks/artworks.component';
-import {HEventsService} from './shared/services/hevents.service';
-import {AuthModule} from './auth/auth.module';
-import {AppRoutingModule} from './app.routing.module';
+import { HEventsService } from './shared/services/hevents.service';
+import { AuthModule } from './auth/auth.module';
+import { AppRoutingModule } from './app.routing.module';
+import { UserService } from './shared/services/user.service';
+import {AuthService} from './shared/services/auth.service';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,6 @@ import {AppRoutingModule} from './app.routing.module';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     HttpModule,
     HttpClientModule,
     AgmCoreModule.forRoot({
@@ -90,7 +90,7 @@ import {AppRoutingModule} from './app.routing.module';
     AuthModule,
     MDBBootstrapModule.forRoot()
   ],
-  providers: [ArticlesService, EventsService, ActionsService, HEventsService],
+  providers: [ArticlesService, EventsService, ActionsService, HEventsService, UserService, AuthService],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })

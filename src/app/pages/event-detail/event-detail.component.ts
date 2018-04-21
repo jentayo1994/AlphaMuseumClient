@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ISlide} from '../../components/carousel/carousel.component';
 import {ActivatedRoute, Params} from '@angular/router';
-import {Event} from '../../models/event';
+import {Event} from '../../shared/models/event';
 import {EventsService} from '../../shared/services/events.service';
 
 

@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Action} from '../../models/action';
+import {Component, OnInit} from '@angular/core';
+import {Action} from '../../shared/models/action';
 import {ActionsService} from '../../shared/services/actions.service';
 
 @Component({

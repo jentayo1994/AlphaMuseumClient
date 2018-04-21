@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ArticlesService} from '../../shared/services/articles.service';
-import {Article} from '../../models/article';
+import {Article} from '../../shared/models/article';
 
 @Component({
   selector: 'app-article',
@@ -18,7 +18,6 @@ export class ArticleComponent implements OnInit {
 
   getArticles() {
     const limit = {param: 'filter[limit]', value: '4'};
-    //let contentFalse = {param: 'filter[fields][imgSrc]', value: ''};
     this.articlesService.getArticles(limit).subscribe(articles => this.articles = articles);
   }
 }
