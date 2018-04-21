@@ -1,60 +1,54 @@
-<!-- Login form -->
-<!--<div class="row align-items-center">-->
-
-  <!--<div class="col-6 ">-->
-    <!--<div class="card mt-5">-->
-      <!--<form>-->
-        <!--<p class="h5 text-center mb-4">Увійти</p>-->
-          <!--<div class="md-form">-->
-            <!--<i class="fa fa-envelope prefix grey-text"></i>-->
-            <!--<input type="text" id="defaultForm-email" class="form-control" mdbActive>-->
-            <!--<label for="defaultForm-email">Ваш email</label>-->
-          <!--</div>-->
-
-
-          <!--<div class="md-form">-->
-            <!--<i class="fa fa-lock prefix grey-text"></i>-->
-            <!--<input type="password" id="defaultForm-pass" class="form-control" mdbActive>-->
-            <!--<label for="defaultForm-pass">Ваш пароль</label>-->
-          <!--</div>-->
-        <!---->
-
-        <!--<div class="text-center">-->
-          <!--<button class="btn btn-default waves-light" mdbRippleRadius>Увійти</button>-->
-        <!--</div>-->
-      <!--</form>-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</div>-->
-<!-- Login form -->
 <div class="card">
   <p class="card-header text-center">Увійти для роботи</p>
-  <form class="login-form">
-    <div class="form-group">
+  <form class="login-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div
+      class="alert alert-{{message.type}}"
+      *ngIf="message.text"
+    >
+      {{message.text}}
+    </div>
+    <div class="md-form form-group">
       <i class="fa fa-envelope prefix grey-text"></i>
       <input
         type="text"
-        class="form-control underlined"
+        class="form-control underline"
         id="email"
-        placeholder="Введите ваш email"
+        placeholder="Введіть ваш email"
+        formControlName="email"
       >
+      <div *ngIf="form.get('email').invalid && form.get('email').touched">
+        <div class="alert alert-danger" *ngIf="form.controls['email'].errors?.required">Email не може бути пустим.</div>
+        <div class="alert alert-danger" *ngIf="form.controls['email'].errors?.email">Введіть правильний email.</div>
+      </div>
     </div>
-    <div class="form-group">
+    <div class="md-form form-group">
       <i class="fa fa-lock prefix grey-text"></i>
       <input
         type="password"
         class="form-control underlined"
         id="password"
         placeholder="Пароль"
+        formControlName="password"
       >
+      <div *ngIf="form.controls['password'].invalid && form.controls['password'].touched">
+        <div class="alert alert-danger" *ngIf="form.controls['password'].errors?.required">Пароль не може бути пустим.</div>
+        <div class="alert alert-danger" *ngIf="form.controls['password'].errors?.minlength">
+          Пароль повинен бути більше {{form.controls['password'].errors?.minlength.requiredLength}} символів.
+        </div>
+      </div>
     </div>
-    <div class="form-group text-center">
-      <button type="submit" class="btn btn-default waves-light" mdbRippleRadius>Увійти</button>
-      <!--<button type="submit" class="btn btn-block btn-primary">Войти</button>-->
+    <div class="md-form form-group text-center">
+      <button
+        type="submit"
+        class="btn btn-primary waves-light"
+        [disabled]="form.invalid"
+        mdbRippleRadius>
+        Увійти
+      </button>
     </div>
     <div class="form-group">
       <p class="text-muted text-xs-center">
-        Нет аккаунта? <a href="#">Зарегистрироваться!</a>
+        Немає аккаунту? <a [routerLink]="'/registration'">Зареєструватися!</a>
       </p>
     </div>
   </form>

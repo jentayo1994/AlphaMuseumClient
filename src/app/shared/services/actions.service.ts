@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import {Action} from '../../models/action';
-import {Observable} from 'rxjs/Rx';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+
+import { Action } from '../models/action';
 
 @Injectable()
 export class ActionsService {

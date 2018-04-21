@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ISlide} from '../../components/carousel/carousel.component';
-import {Event} from '../../models/event';
+import {Event} from '../../shared/models/event';
 import {EventsService} from '../../shared/services/events.service';
 
 @Component({
