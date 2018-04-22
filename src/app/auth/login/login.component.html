@@ -17,8 +17,8 @@
         formControlName="email"
       >
       <div *ngIf="form.get('email').invalid && form.get('email').touched">
-        <div class="alert alert-danger" *ngIf="form.controls['email'].errors?.required">Email не може бути пустим.</div>
-        <div class="alert alert-danger" *ngIf="form.controls['email'].errors?.email">Введіть правильний email.</div>
+        <div class="alert alert-{{message.type}}" *ngIf="form.controls['email'].errors?.required">Поле Email не може бути пустим.</div>
+        <div class="alert alert-{{message.type}}" *ngIf="form.controls['email'].errors?.email">Введіть правильний email.</div>
       </div>
     </div>
     <div class="md-form form-group">
@@ -31,9 +31,9 @@
         formControlName="password"
       >
       <div *ngIf="form.controls['password'].invalid && form.controls['password'].touched">
-        <div class="alert alert-danger" *ngIf="form.controls['password'].errors?.required">Пароль не може бути пустим.</div>
-        <div class="alert alert-danger" *ngIf="form.controls['password'].errors?.minlength">
-          Пароль повинен бути більше {{form.controls['password'].errors?.minlength.requiredLength}} символів.
+        <div class="alert alert-{{message.type}}" *ngIf="form.controls['password'].errors?.required">Поле Пароль не може бути пустим.</div>
+        <div class="alert alert-{{message.type}}" *ngIf="form.controls['password'].errors?.minlength">
+          Пароль повинен містити більше {{form.controls['password'].errors?.minlength.requiredLength}} символів.
         </div>
       </div>
     </div>

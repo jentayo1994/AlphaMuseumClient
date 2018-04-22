@@ -1,32 +1,69 @@
-<!--Register form-->
-<!--<div class="card mt-5">-->
-  <!---->
-  <!---->
-  <!---->
-  <!--<form>-->
-    <!--<p class="h5 text-center mb-4">Sign up</p>   -->
-    <!---->
-    <!--<div class="md-form">-->
-      <!--<i class="fa fa-user prefix grey-text"></i>-->
-      <!--<input type="text" id="orangeForm-name" class="form-control" mdbActive>-->
-      <!--<label for="orangeForm-name">Your name</label>-->
-    <!--</div>-->
-    <!--<div class="md-form">-->
-      <!--<i class="fa fa-envelope prefix grey-text"></i>-->
-      <!--<input type="text" id="orangeForm-email" class="form-control" mdbActive>-->
-      <!--<label for="orangeForm-email">Your email</label>-->
-    <!--</div>-->
-
-    <!--<div class="md-form">-->
-      <!--<i class="fa fa-lock prefix grey-text"></i>-->
-      <!--<input type="password" id="orangeForm-pass" class="form-control" mdbActive>-->
-      <!--<label for="orangeForm-pass">Your password</label>-->
-    <!--</div>-->
-
-    <!--<div class="text-center">-->
-      <!--<button class="btn btn-deep-orange waves-light" mdbRippleRadius>Sign up</button>-->
-    <!--</div>-->
-
-  <!--</form>-->
-<!--</div>-->
-<!--/Register form-->
+<div class="card">
+  <p class="card-header text-center">Зареєструватися</p>
+  <form class="login-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div
+      class="alert alert-{{message.type}}"
+      *ngIf="message.text"
+    >
+      {{message.text}}
+    </div>
+    <div class="md-form form-group">
+      <i class="fa fa-envelope prefix grey-text"></i>
+      <input
+        type="text"
+        class="form-control underline"
+        id="email"
+        placeholder="Введіть ваш email"
+        formControlName="email"
+      >
+      <div *ngIf="form.get('email').invalid && form.get('email').touched">
+        <div class="alert alert-danger" *ngIf="form.controls['email'].errors?.required">Поле Email не може бути пустим.</div>
+        <div class="alert alert-danger" *ngIf="form.controls['email'].errors?.email">Введіть правильний email.</div>
+        <div class="alert alert-danger" *ngIf="form.controls['email'].errors?.forbiddenEmail">Користувач з таким email уже зареєстрован.</div>
+      </div>
+    </div>
+    <div class="md-form form-group">
+      <i class="fa fa-lock prefix grey-text"></i>
+      <input
+        type="password"
+        class="form-control underlined"
+        id="password"
+        placeholder="Пароль"
+        formControlName="password"
+      >
+      <div *ngIf="form.controls['password'].invalid && form.controls['password'].touched">
+        <div class="alert alert-danger" *ngIf="form.controls['password'].errors?.required">Поле Пароль не може бути пустим.</div>
+        <div class="alert alert-danger" *ngIf="form.controls['password'].errors?.minlength && form.controls['password'].errors?.minlength.requiredLength">
+          Пароль повинен містити більше {{form.controls['password'].errors?.minlength.requiredLength}} символів.
+        </div>
+      </div>
+    </div>
+    <div class="md-form form-group">
+      <i class="fa fa-envelope prefix grey-text"></i>
+      <input
+        type="text"
+        class="form-control underline"
+        id="name"
+        placeholder="Введіть ваше ім'я"
+        formControlName="name"
+      >
+      <div *ngIf="form.get('name').invalid && form.get('name').touched">
+        <div class="alert alert-danger" *ngIf="form.controls['name'].errors?.required">Поле Ім'я не може бути пустим.</div>
+      </div>
+    </div>
+    <div class="md-form form-group text-center">
+      <button
+        type="submit"
+        class="btn btn-primary waves-light"
+        [disabled]="form.invalid"
+        mdbRippleRadius>
+        Зареєструватися
+      </button>
+    </div>
+    <div class="form-group">
+      <p class="text-muted text-xs-center">
+        Немає аккаунту? <a [routerLink]="'/login'">Увійти!</a>
+      </p>
+    </div>
+  </form>
+</div>
